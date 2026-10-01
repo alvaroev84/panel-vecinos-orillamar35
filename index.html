@@ -120,7 +120,8 @@
     });
 
     function num(f) { if (!f) return 0; var p = f.split('/'); return p.length === 3 ? +(p[2] + p[1] + p[0]) : 0; }
-    var temas = (d.temas || []).slice().sort(function (a, b) { return num(b.ultima_novedad) - num(a.ultima_novedad); });
+    function prog(t) { return t.estado === 'programado' ? 1 : 0; }
+    var temas = (d.temas || []).slice().sort(function (a, b) { return (prog(a) - prog(b)) || (num(b.ultima_novedad) - num(a.ultima_novedad)); });
     var nuevos = temas.filter(function (t) { return t.novedad; });
     var resto = temas.filter(function (t) { return !t.novedad; });
     function tarjeta(t) {
