@@ -112,7 +112,11 @@
     app.innerHTML = '';
     document.getElementById('act').textContent = d.actualizado;
 
-    (d.avisos || []).forEach(function (a) {
+    function caducado(f) {
+      if (!f) return false; var p = f.split('/'); if (p.length !== 3) return false;
+      var fin = new Date(+p[2], +p[1] - 1, +p[0], 23, 59, 59); return new Date() > fin;
+    }
+    (d.avisos || []).filter(function (a) { return !caducado(a.hasta); }).forEach(function (a) {
       var box = el('div', 'aviso');
       box.appendChild(el('strong', null, 'Aviso'));
       box.appendChild(el('span', null, a.texto));
