@@ -18,7 +18,7 @@
       "tema": "Bomba de achique del foso del ascensor",
       "estado": "presupuesto",
       "estado_texto": "Pidiendo presupuesto",
-      "detalle": "La bomba no funciona bien y hay que sustituirla (el cambio ya se aprobó en la junta de septiembre de 2025).",
+      "detalle": "La bomba no funciona bien y hay que sustituirla.",
       "siguiente": "Se ha pedido el diagnóstico y el presupuesto de la bomba nueva por escrito.",
       "desde": "28/09/2026"
     },
@@ -71,27 +71,57 @@
       "desde": "01/10/2026"
     },
     {
-      "tema": "Nidos de gaviotas",
+      "tema": "Revisión de nidos de gaviotas",
       "estado": "programado",
       "estado_texto": "Programado",
-      "detalle": "Hay nidos de gaviotas en la cubierta.",
-      "siguiente": "Se pedirá al Ayuntamiento la retirada de nidos en febrero o marzo, antes de la época de cría.",
+      "detalle": "Se revisará la cubierta para comprobar si hay nidos de gaviotas.",
+      "siguiente": "Si los hay, se pedirá al Ayuntamiento su retirada en febrero o marzo, antes de la época de cría.",
       "desde": "01/10/2026"
     }
   ],
   "hecho": [
-    { "fecha": "28/09/2026", "texto": "Junta ordinaria de propietarios celebrada." },
-    { "fecha": "2026", "texto": "Mejoras de seguridad en el ascensor: barrera de fotocélulas en la puerta, control de carga y comunicación de emergencia." },
-    { "fecha": "20/12/2025", "texto": "Pasamanos instalados en el portal." },
-    { "fecha": "23/10/2025", "texto": "Nueva empresa de limpieza: portal de lunes a viernes." },
-    { "fecha": "01/10/2025", "texto": "Nuevo seguro del edificio, sin franquicia en daños por agua." }
+    {
+      "fecha": "28/09/2026",
+      "texto": "Junta ordinaria de propietarios celebrada."
+    },
+    {
+      "fecha": "2026",
+      "texto": "Mejoras de seguridad en el ascensor: barrera de fotocélulas en la puerta, control de carga y comunicación de emergencia."
+    },
+    {
+      "fecha": "20/12/2025",
+      "texto": "Pasamanos instalados en el portal."
+    },
+    {
+      "fecha": "23/10/2025",
+      "texto": "Nueva empresa de limpieza: portal de lunes a viernes."
+    },
+    {
+      "fecha": "01/10/2025",
+      "texto": "Nuevo seguro del edificio, sin franquicia en daños por agua."
+    }
   ],
   "limpieza": [
-    { "zona": "Portal, ascensor, buzones y puerta", "frecuencia": "Lunes a viernes" },
-    { "zona": "Rellanos de las plantas", "frecuencia": "Cada semana" },
-    { "zona": "Escaleras y pasamanos", "frecuencia": "Cada 15 días" },
-    { "zona": "Pasillo de los trasteros", "frecuencia": "Una vez al mes" },
-    { "zona": "Ventanas de la escalera (por dentro)", "frecuencia": "Cada 6 meses" }
+    {
+      "zona": "Portal, ascensor, buzones y puerta",
+      "frecuencia": "Lunes a viernes"
+    },
+    {
+      "zona": "Rellanos de las plantas",
+      "frecuencia": "Cada semana"
+    },
+    {
+      "zona": "Escaleras y pasamanos",
+      "frecuencia": "Cada 15 días"
+    },
+    {
+      "zona": "Pasillo de los trasteros",
+      "frecuencia": "Una vez al mes"
+    },
+    {
+      "zona": "Ventanas de la escalera (por dentro)",
+      "frecuencia": "Cada 6 meses"
+    }
   ],
   "contacto": {
     "administracion": "Coysa-Ruiz Gestión · Bea",
@@ -99,6 +129,7 @@
     "email": "beatriz@coysa-ruiz.com",
     "presidente": "Álvaro Enríquez · 1º Centro",
     "ascensor": "981 286 100",
-    "agua": "900 825 160"
+    "agua": "900 825 160",
+    "presidente_telefono": "652 048 298"
   }
 }

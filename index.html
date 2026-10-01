@@ -165,6 +165,7 @@
     if (c.telefono) fila('Teléfono de la administración', c.telefono, tel(c.telefono));
     if (c.email) fila('Email de la administración', c.email, 'mailto:' + c.email);
     if (c.presidente) fila('Presidente', c.presidente);
+    if (c.presidente_telefono) fila('Teléfono del presidente', c.presidente_telefono, tel(c.presidente_telefono));
     app.appendChild(box);
 
     app.appendChild(el('footer', null, 'Página informativa para los vecinos de Orillamar 35. No incluye datos personales ni el contenido de las actas, que se envían a cada propietario.'));
