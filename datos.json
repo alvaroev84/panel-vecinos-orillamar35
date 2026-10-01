@@ -10,8 +10,8 @@
       "tema": "Sala de máquinas del ascensor",
       "estado": "esperando",
       "estado_texto": "Esperando informe",
-      "detalle": "El técnico del ascensor ha detectado entrada de agua y grietas en la sala de máquinas.",
-      "siguiente": "Con su informe técnico se reclamará a quien corresponda y, si procede, se dará parte al seguro.",
+      "detalle": "Se han detectado humedades y algunos desperfectos en la sala de máquinas del ascensor.",
+      "siguiente": "La empresa de mantenimiento está preparando un informe técnico para decidir la reparación.",
       "desde": "28/09/2026",
       "ultima_novedad": "28/09/2026",
       "novedad": ""
@@ -20,8 +20,8 @@
       "tema": "Bomba de achique del foso del ascensor",
       "estado": "presupuesto",
       "estado_texto": "Pidiendo presupuesto",
-      "detalle": "La bomba no funciona bien y hay que sustituirla.",
-      "siguiente": "Se ha pedido el diagnóstico y el presupuesto de la bomba nueva por escrito.",
+      "detalle": "La bomba de achique del foso del ascensor hay que sustituirla.",
+      "siguiente": "Se está pidiendo presupuesto.",
       "desde": "28/09/2026",
       "ultima_novedad": "28/09/2026",
       "novedad": ""
@@ -30,8 +30,8 @@
       "tema": "Cubierta: goteras en la zona de trasteros",
       "estado": "en-marcha",
       "estado_texto": "En marcha",
-      "detalle": "Hay goteras y grietas en la zona de trasteros, bajo la cubierta.",
-      "siguiente": "Se ha requerido por escrito a la empresa que hizo la obra de la cubierta que venga a revisarla. Un técnico revisará también la cubierta.",
+      "detalle": "Se han detectado goteras en la zona de trasteros, bajo la cubierta.",
+      "siguiente": "Se está gestionando la revisión y reparación de la cubierta.",
       "desde": "30/09/2026",
       "ultima_novedad": "30/09/2026",
       "novedad": ""
@@ -40,8 +40,8 @@
       "tema": "Claraboyas",
       "estado": "presupuesto",
       "estado_texto": "Comparando presupuestos",
-      "detalle": "Se van a sustituir las dos claraboyas del edificio (aprobado en junta). La obra incluye algo de albañilería junto a un trastero.",
-      "siguiente": "En cuanto llegue el segundo presupuesto se elegirá la opción más adecuada y se avisará a todos antes de empezar.",
+      "detalle": "Se van a sustituir las dos claraboyas del edificio.",
+      "siguiente": "Se están comparando presupuestos. Se avisará a todos antes de empezar la obra.",
       "desde": "28/09/2026",
       "ultima_novedad": "28/09/2026",
       "novedad": ""
@@ -50,8 +50,8 @@
       "tema": "Jardín interior compartido",
       "estado": "esperando",
       "estado_texto": "Esperando respuesta",
-      "detalle": "El jardín que compartimos con otras dos comunidades está en mal estado.",
-      "siguiente": "Se ha pedido a la gestora del jardín el detalle de los trabajos contratados y una reunión con las otras dos comunidades.",
+      "detalle": "Queremos mejorar el mantenimiento del jardín interior que compartimos con otras dos comunidades.",
+      "siguiente": "Se está organizando una reunión con las otras comunidades.",
       "desde": "30/09/2026",
       "ultima_novedad": "30/09/2026",
       "novedad": ""
@@ -61,17 +61,17 @@
       "estado": "presupuesto",
       "estado_texto": "Pidiendo presupuestos",
       "detalle": "Para que la puerta del portal sea más fácil de abrir, sobre todo para las personas mayores.",
-      "siguiente": "La administración está pidiendo presupuestos a varias empresas.",
+      "siguiente": "Se están pidiendo presupuestos.",
       "desde": "28/09/2026",
       "ultima_novedad": "28/09/2026",
       "novedad": ""
     },
     {
-      "tema": "Bajante del edificio colindante",
+      "tema": "Desagüe en el patio",
       "estado": "esperando",
       "estado_texto": "Esperando respuesta",
-      "detalle": "Un desagüe del edificio de al lado vierte agua a nuestro patio.",
-      "siguiente": "Se ha reclamado por escrito a la comunidad vecina y se está haciendo seguimiento.",
+      "detalle": "Hay un desagüe que vierte agua a nuestro patio.",
+      "siguiente": "Se está gestionando para que se corrija.",
       "desde": "10/11/2025",
       "ultima_novedad": "10/11/2025",
       "novedad": ""
@@ -116,7 +116,7 @@
     },
     {
       "fecha": "01/10/2025",
-      "texto": "Nuevo seguro del edificio, sin franquicia en daños por agua."
+      "texto": "Nuevo seguro del edificio."
     }
   ],
   "limpieza": [
