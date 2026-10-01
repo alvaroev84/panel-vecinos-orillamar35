@@ -11,16 +11,6 @@
   ],
   "temas": [
     {
-      "tema": "Acta de la junta del 28 de septiembre",
-      "estado": "esperando",
-      "estado_texto": "Pendiente de recibir",
-      "detalle": "La administración está terminando el acta de la junta ordinaria celebrada el 28 de septiembre.",
-      "siguiente": "Os llegará a todos por correo postal y por email.",
-      "desde": "28/09/2026",
-      "ultima_novedad": "01/10/2026",
-      "novedad": "Pendiente de recibir el acta definitiva."
-    },
-    {
       "tema": "Sala de máquinas del ascensor",
       "estado": "esperando",
       "estado_texto": "Esperando informe",
@@ -55,10 +45,10 @@
       "estado": "presupuesto",
       "estado_texto": "Comparando presupuestos",
       "detalle": "Se van a sustituir las dos claraboyas del edificio.",
-      "siguiente": "Se están comparando presupuestos. Se avisará a todos antes de empezar la obra.",
+      "siguiente": "Se elegirá la opción más adecuada y se avisará a todos antes de empezar la obra.",
       "desde": "28/09/2026",
-      "ultima_novedad": "28/09/2026",
-      "novedad": ""
+      "ultima_novedad": "01/10/2026",
+      "novedad": "Ya ha llegado el segundo presupuesto. Ahora se compararán para elegir la mejor opción."
     },
     {
       "tema": "Jardín interior compartido",
@@ -75,10 +65,10 @@
       "estado": "presupuesto",
       "estado_texto": "Pidiendo presupuestos",
       "detalle": "Para que la puerta del portal sea más fácil de abrir, sobre todo para las personas mayores.",
-      "siguiente": "Se están pidiendo presupuestos.",
+      "siguiente": "En cuanto lleguen los presupuestos se compararán.",
       "desde": "28/09/2026",
-      "ultima_novedad": "28/09/2026",
-      "novedad": ""
+      "ultima_novedad": "01/10/2026",
+      "novedad": "Se han pedido presupuestos a tres empresas instaladoras."
     },
     {
       "tema": "Desagüe en el patio",
@@ -112,6 +102,10 @@
     }
   ],
   "hecho": [
+    {
+      "fecha": "01/10/2026",
+      "texto": "Acta de la junta del 28 de septiembre enviada a todos los propietarios por email; también llegará por correo postal."
+    },
     {
       "fecha": "01/10/2026",
       "texto": "Estrenamos este panel de la comunidad y los avisos por WhatsApp."
