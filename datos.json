@@ -2,10 +2,20 @@
   "actualizado": "01/10/2026",
   "avisos": [
     {
-      "texto": "El acta de la junta del 28 de septiembre os llegará por email y en papel. A partir de ahora, todas las convocatorias y notificaciones se enviarán por los dos medios."
+      "texto": "A partir de ahora, todas las convocatorias y notificaciones de la comunidad os llegarán por los dos medios: por correo postal y por email."
     }
   ],
   "temas": [
+    {
+      "tema": "Acta de la junta del 28 de septiembre",
+      "estado": "esperando",
+      "estado_texto": "Pendiente de recibir",
+      "detalle": "La administración está terminando el acta de la junta ordinaria celebrada el 28 de septiembre.",
+      "siguiente": "Os llegará a todos por correo postal y por email.",
+      "desde": "28/09/2026",
+      "ultima_novedad": "01/10/2026",
+      "novedad": "Pendiente de recibir el acta definitiva."
+    },
     {
       "tema": "Sala de máquinas del ascensor",
       "estado": "esperando",
@@ -18,13 +28,13 @@
     },
     {
       "tema": "Bomba de achique del foso del ascensor",
-      "estado": "presupuesto",
-      "estado_texto": "Pidiendo presupuesto",
+      "estado": "en-marcha",
+      "estado_texto": "En marcha",
       "detalle": "La bomba de achique del foso del ascensor hay que sustituirla.",
-      "siguiente": "Se está pidiendo presupuesto.",
+      "siguiente": "Después de retirar el agua se decidirá la sustitución de la bomba, para la que se está pidiendo presupuesto.",
       "desde": "28/09/2026",
-      "ultima_novedad": "28/09/2026",
-      "novedad": ""
+      "ultima_novedad": "01/10/2026",
+      "novedad": "La empresa de saneamiento vendrá a retirar el agua que pueda haberse acumulado en el foso del ascensor."
     },
     {
       "tema": "Cubierta: goteras en la zona de trasteros",
