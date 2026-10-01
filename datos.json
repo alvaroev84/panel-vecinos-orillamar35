@@ -12,7 +12,9 @@
       "estado_texto": "Esperando informe",
       "detalle": "El técnico del ascensor ha detectado entrada de agua y grietas en la sala de máquinas.",
       "siguiente": "Con su informe técnico se reclamará a quien corresponda y, si procede, se dará parte al seguro.",
-      "desde": "28/09/2026"
+      "desde": "28/09/2026",
+      "ultima_novedad": "28/09/2026",
+      "novedad": ""
     },
     {
       "tema": "Bomba de achique del foso del ascensor",
@@ -20,7 +22,9 @@
       "estado_texto": "Pidiendo presupuesto",
       "detalle": "La bomba no funciona bien y hay que sustituirla.",
       "siguiente": "Se ha pedido el diagnóstico y el presupuesto de la bomba nueva por escrito.",
-      "desde": "28/09/2026"
+      "desde": "28/09/2026",
+      "ultima_novedad": "28/09/2026",
+      "novedad": ""
     },
     {
       "tema": "Cubierta: goteras en la zona de trasteros",
@@ -28,7 +32,9 @@
       "estado_texto": "En marcha",
       "detalle": "Hay goteras y grietas en la zona de trasteros, bajo la cubierta.",
       "siguiente": "Se ha requerido por escrito a la empresa que hizo la obra de la cubierta que venga a revisarla. Un técnico revisará también la cubierta.",
-      "desde": "30/09/2026"
+      "desde": "30/09/2026",
+      "ultima_novedad": "30/09/2026",
+      "novedad": ""
     },
     {
       "tema": "Claraboyas",
@@ -36,7 +42,9 @@
       "estado_texto": "Comparando presupuestos",
       "detalle": "Se van a sustituir las dos claraboyas del edificio (aprobado en junta). La obra incluye algo de albañilería junto a un trastero.",
       "siguiente": "En cuanto llegue el segundo presupuesto se elegirá la opción más adecuada y se avisará a todos antes de empezar.",
-      "desde": "28/09/2026"
+      "desde": "28/09/2026",
+      "ultima_novedad": "28/09/2026",
+      "novedad": ""
     },
     {
       "tema": "Jardín interior compartido",
@@ -44,7 +52,9 @@
       "estado_texto": "Esperando respuesta",
       "detalle": "El jardín que compartimos con otras dos comunidades está en mal estado.",
       "siguiente": "Se ha pedido a la gestora del jardín el detalle de los trabajos contratados y una reunión con las otras dos comunidades.",
-      "desde": "30/09/2026"
+      "desde": "30/09/2026",
+      "ultima_novedad": "30/09/2026",
+      "novedad": ""
     },
     {
       "tema": "Motor para la puerta del portal",
@@ -52,7 +62,9 @@
       "estado_texto": "Pidiendo presupuestos",
       "detalle": "Para que la puerta del portal sea más fácil de abrir, sobre todo para las personas mayores.",
       "siguiente": "La administración está pidiendo presupuestos a varias empresas.",
-      "desde": "28/09/2026"
+      "desde": "28/09/2026",
+      "ultima_novedad": "28/09/2026",
+      "novedad": ""
     },
     {
       "tema": "Bajante del edificio colindante",
@@ -60,7 +72,9 @@
       "estado_texto": "Esperando respuesta",
       "detalle": "Un desagüe del edificio de al lado vierte agua a nuestro patio.",
       "siguiente": "Se ha reclamado por escrito a la comunidad vecina y se está haciendo seguimiento.",
-      "desde": "10/11/2025"
+      "desde": "10/11/2025",
+      "ultima_novedad": "10/11/2025",
+      "novedad": ""
     },
     {
       "tema": "Limpieza de canalones y revisión de la cubierta",
@@ -68,7 +82,9 @@
       "estado_texto": "Programado",
       "detalle": "Revisión anual antes de las lluvias fuertes del invierno.",
       "siguiente": "Se encargará entre octubre y noviembre.",
-      "desde": "01/10/2026"
+      "desde": "01/10/2026",
+      "ultima_novedad": "01/10/2026",
+      "novedad": ""
     },
     {
       "tema": "Revisión de nidos de gaviotas",
@@ -76,7 +92,9 @@
       "estado_texto": "Programado",
       "detalle": "Se revisará la cubierta para comprobar si hay nidos de gaviotas.",
       "siguiente": "Si los hay, se pedirá al Ayuntamiento su retirada en febrero o marzo, antes de la época de cría.",
-      "desde": "01/10/2026"
+      "desde": "01/10/2026",
+      "ultima_novedad": "01/10/2026",
+      "novedad": ""
     }
   ],
   "hecho": [
