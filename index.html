@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Orillamar 35 · Estado de la comunidad</title>
+<meta name="description" content="Qué se está haciendo en la comunidad de Orillamar 35 y en qué punto está cada tema.">
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --ink: #14181f; --muted: #535b66; --line: #dde1e6;
+    --brand: #1f4e79; --brand-ink: #ffffff;
+    --s-esperando-bg: #fff4d6; --s-esperando: #7a5200;
+    --s-presupuesto-bg: #e8eefc; --s-presupuesto: #1d3f8f;
+    --s-en-marcha-bg: #e1f3ea; --s-en-marcha: #146c43;
+    --s-programado-bg: #eeeef1; --s-programado: #454b55;
+    --s-hecho-bg: #e1f3ea; --s-hecho: #146c43;
+    --urg-bg: #b00020;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151a; --card: #1b2028; --ink: #eef1f5; --muted: #aab2bd; --line: #2c333d;
+      --brand: #8db8e8; --brand-ink: #0f1a26;
+      --s-esperando-bg: #3a2f12; --s-esperando: #ffd479;
+      --s-presupuesto-bg: #1d2a47; --s-presupuesto: #a9c1ff;
+      --s-en-marcha-bg: #15352a; --s-en-marcha: #8fe0b6;
+      --s-programado-bg: #2a2f37; --s-programado: #c9ced6;
+      --s-hecho-bg: #15352a; --s-hecho: #8fe0b6;
+      --urg-bg: #c2182f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 40px; }
+  header { background: var(--brand); color: var(--brand-ink); padding: 22px 16px 18px; }
+  header .wrap { padding-bottom: 0; }
+  h1 { margin: 0; font-size: 1.55rem; line-height: 1.2; }
+  .sub { margin: 6px 0 0; opacity: .9; font-size: .95rem; }
+  h2 { font-size: 1.15rem; margin: 28px 0 10px; }
+  .aviso { background: var(--card); border-left: 6px solid var(--brand); border-radius: 10px; padding: 14px 16px; margin-top: 18px; }
+  .aviso strong { display: block; margin-bottom: 4px; }
+  .leyenda { color: var(--muted); font-size: .9rem; margin: -4px 0 12px; }
+  .tema { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 12px; }
+  .tema h3 { margin: 0 0 8px; font-size: 1.08rem; line-height: 1.3; }
+  .chip { display: inline-flex; align-items: center; gap: 6px; font-size: .88rem; font-weight: 650; padding: 4px 10px; border-radius: 999px; margin-bottom: 8px; }
+  .chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+  .esperando { background: var(--s-esperando-bg); color: var(--s-esperando); }
+  .presupuesto { background: var(--s-presupuesto-bg); color: var(--s-presupuesto); }
+  .en-marcha { background: var(--s-en-marcha-bg); color: var(--s-en-marcha); }
+  .programado { background: var(--s-programado-bg); color: var(--s-programado); }
+  .tema p { margin: 4px 0; }
+  .sig { color: var(--ink); }
+  .sig b { font-weight: 650; }
+  .desde { color: var(--muted); font-size: .85rem; margin-top: 6px !important; }
+  ul.hecho { list-style: none; padding: 0; margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+  ul.hecho li { padding: 12px 16px; border-bottom: 1px solid var(--line); display: flex; gap: 12px; }
+  ul.hecho li:last-child { border-bottom: 0; }
+  ul.hecho .ok { color: var(--s-hecho); font-weight: 800; }
+  ul.hecho .f { color: var(--muted); font-size: .88rem; white-space: nowrap; min-width: 84px; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  td.fr { text-align: right; font-weight: 650; white-space: nowrap; }
+  .urg { display: flex; justify-content: space-between; align-items: center; background: var(--urg-bg); color: #fff; border-radius: 12px; padding: 12px 16px; text-decoration: none; margin-bottom: 10px; }
+  .urg b { font-size: 1.8rem; }
+  .contacto { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 4px 0; }
+  .contacto a, .contacto div { display: flex; justify-content: space-between; gap: 12px; padding: 11px 16px; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line); }
+  .contacto > :last-child { border-bottom: 0; }
+  .contacto span:last-child { font-weight: 650; text-align: right; overflow-wrap: anywhere; }
+  .contacto a span:last-child { color: var(--brand); }
+  .contacto .num { white-space: nowrap; flex-shrink: 0; }
+  @media (prefers-color-scheme: dark) { .contacto a span:last-child { color: var(--brand); } }
+  footer { color: var(--muted); font-size: .85rem; margin-top: 28px; }
+  .error { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Comunidad Orillamar 35</h1>
+    <p class="sub">Qué estamos haciendo y en qué punto está cada tema · <span id="act">…</span></p>
+  </div>
+</header>
+
+<main class="wrap" id="app">
+  <p class="error" id="cargando">Cargando…</p>
+</main>
+
+<script>
+(function () {
+  var app = document.getElementById('app');
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function h2(t) { return el('h2', null, t); }
+  function tel(n) { return 'tel:' + String(n).replace(/\s/g, ''); }
+
+  fetch('datos.json', { cache: 'no-store' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(pinta)
+    .catch(function () {
+      document.getElementById('cargando').textContent = 'No se ha podido cargar la información. Vuelve a intentarlo en un rato.';
+    });
+
+  function pinta(d) {
+    app.innerHTML = '';
+    document.getElementById('act').textContent = 'Actualizado el ' + d.actualizado;
+
+    (d.avisos || []).forEach(function (a) {
+      var box = el('div', 'aviso');
+      box.appendChild(el('strong', null, 'Aviso'));
+      box.appendChild(el('span', null, a.texto));
+      app.appendChild(box);
+    });
+
+    app.appendChild(h2('En qué estamos'));
+    app.appendChild(el('p', 'leyenda', 'Cada tema indica su estado y el siguiente paso.'));
+    (d.temas || []).forEach(function (t) {
+      var c = el('article', 'tema');
+      c.appendChild(el('h3', null, t.tema));
+      c.appendChild(el('span', 'chip ' + t.estado, t.estado_texto));
+      c.appendChild(el('p', null, t.detalle));
+      var s = el('p', 'sig'); s.appendChild(el('b', null, 'Siguiente paso: ')); s.appendChild(document.createTextNode(t.siguiente)); c.appendChild(s);
+      if (t.desde) c.appendChild(el('p', 'desde', 'Desde el ' + t.desde));
+      app.appendChild(c);
+    });
+
+    if ((d.hecho || []).length) {
+      app.appendChild(h2('Hecho recientemente'));
+      var ul = el('ul', 'hecho');
+      d.hecho.forEach(function (h) {
+        var li = el('li');
+        li.appendChild(el('span', 'ok', '✓'));
+        li.appendChild(el('span', 'f', h.fecha));
+        li.appendChild(el('span', null, h.texto));
+        ul.appendChild(li);
+      });
+      app.appendChild(ul);
+    }
+
+    if ((d.limpieza || []).length) {
+      app.appendChild(h2('Limpieza de zonas comunes'));
+      var tb = el('table');
+      d.limpieza.forEach(function (l) {
+        var tr = el('tr'); tr.appendChild(el('td', null, l.zona)); tr.appendChild(el('td', 'fr', l.frecuencia)); tb.appendChild(tr);
+      });
+      app.appendChild(tb);
+    }
+
+    var c = d.contacto || {};
+    app.appendChild(h2('Contacto y urgencias'));
+    var u = el('a', 'urg'); u.href = 'tel:112';
+    u.appendChild(el('span', null, 'Emergencias')); u.appendChild(el('b', null, '112'));
+    app.appendChild(u);
+    var box = el('div', 'contacto');
+    function fila(label, value, href) {
+      var f = href ? el('a') : el('div');
+      if (href) f.href = href;
+      var esTel = href && href.indexOf('tel:') === 0;
+      f.appendChild(el('span', null, label)); f.appendChild(el('span', esTel ? 'num' : null, value));
+      box.appendChild(f);
+    }
+    if (c.ascensor) fila('Ascensor averiado o persona atrapada', c.ascensor, tel(c.ascensor));
+    if (c.agua) fila('Avería de agua (Emalcsa, 24 h)', c.agua, tel(c.agua));
+    if (c.administracion) fila('Administración', c.administracion);
+    if (c.telefono) fila('Teléfono de la administración', c.telefono, tel(c.telefono));
+    if (c.email) fila('Email de la administración', c.email, 'mailto:' + c.email);
+    if (c.presidente) fila('Presidente', c.presidente);
+    app.appendChild(box);
+
+    app.appendChild(el('footer', null, 'Página informativa para los vecinos de Orillamar 35. No incluye datos personales ni el contenido de las actas, que se envían a cada propietario.'));
+  }
+})();
+</script>
+</body>
+</html>
