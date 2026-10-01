@@ -38,13 +38,13 @@
     },
     {
       "tema": "Claraboyas",
-      "estado": "presupuesto",
-      "estado_texto": "Comparando presupuestos",
+      "estado": "en-marcha",
+      "estado_texto": "Adjudicada",
       "detalle": "Se van a sustituir las dos claraboyas del edificio.",
-      "siguiente": "Se elegirá la opción más adecuada y se avisará a todos antes de empezar la obra.",
+      "siguiente": "Se acordará la fecha con la empresa y se avisará a todos con antelación.",
       "desde": "28/09/2026",
       "ultima_novedad": "01/10/2026",
-      "novedad": "Ya ha llegado el segundo presupuesto. Ahora se compararán para elegir la mejor opción."
+      "novedad": "Ya se ha elegido la empresa. La obra durará unos 2 días."
     },
     {
       "tema": "Jardín interior compartido",
