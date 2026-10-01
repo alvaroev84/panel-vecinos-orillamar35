@@ -2,6 +2,9 @@
   "actualizado": "01/10/2026",
   "avisos": [
     {
+      "texto": "Hoy, jueves 1 de octubre, a partir de las 16:30, vendrán a retirar el agua del foso del ascensor. Es posible que el ascensor no funcione durante un rato. Disculpad las molestias."
+    },
+    {
       "texto": "A partir de ahora, todas las convocatorias y notificaciones de la comunidad os llegarán por los dos medios: por correo postal y por email."
     }
   ],
@@ -34,7 +37,7 @@
       "siguiente": "Después de retirar el agua se decidirá la sustitución de la bomba, para la que se está pidiendo presupuesto.",
       "desde": "28/09/2026",
       "ultima_novedad": "01/10/2026",
-      "novedad": "La empresa de saneamiento vendrá a retirar el agua que pueda haberse acumulado en el foso del ascensor."
+      "novedad": "Hoy, 1 de octubre, a partir de las 16:30, la empresa de saneamiento retirará el agua acumulada en el foso del ascensor. El ascensor puede quedar parado un rato."
     },
     {
       "tema": "Cubierta: goteras en la zona de trasteros",
