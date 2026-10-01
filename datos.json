@@ -22,13 +22,13 @@
     },
     {
       "tema": "Bomba de achique del foso del ascensor",
-      "estado": "en-marcha",
-      "estado_texto": "En marcha",
-      "detalle": "La bomba de achique del foso del ascensor hay que sustituirla.",
-      "siguiente": "Después de retirar el agua se decidirá la sustitución de la bomba, para la que se está pidiendo presupuesto.",
+      "estado": "presupuesto",
+      "estado_texto": "Pidiendo presupuesto",
+      "detalle": "Se ha revisado el foso del ascensor y está seco. Hace falta instalar una bomba de achique nueva.",
+      "siguiente": "En cuanto llegue el presupuesto se decidirá la instalación.",
       "desde": "28/09/2026",
       "ultima_novedad": "01/10/2026",
-      "novedad": "Hoy, 1 de octubre, entre las 16:30 y las 17:30, la empresa de saneamiento retirará el agua acumulada en el foso del ascensor. El ascensor puede quedar parado ese rato."
+      "novedad": "Revisado el foso del ascensor: está seco. Se pide presupuesto para la bomba nueva."
     },
     {
       "tema": "Cubierta: goteras en la zona de trasteros",
