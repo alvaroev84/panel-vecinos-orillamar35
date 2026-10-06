@@ -2,6 +2,10 @@
   "actualizado": "06/10/2026",
   "avisos": [
     {
+      "texto": "Obra de las claraboyas: martes 13 de octubre desde las 15:30 (unos 2 días). Habrá operarios en la escalera y en la zona de trasteros; puede haber algo de ruido y polvo.",
+      "hasta": "14/10/2026"
+    },
+    {
       "texto": "A partir de ahora, todas las convocatorias y notificaciones de la comunidad os llegarán por los dos medios: por correo postal y por email."
     }
   ],
@@ -9,12 +13,12 @@
     {
       "tema": "Claraboyas",
       "estado": "en-marcha",
-      "estado_texto": "Adjudicada",
+      "estado_texto": "Con fecha",
       "detalle": "Se van a sustituir las dos claraboyas del edificio.",
-      "siguiente": "En cuanto llegue el material se fijará el día de la obra (unos 2 días) y se avisará a todos con antelación.",
+      "siguiente": "Obra el martes 13 de octubre desde las 15:30. Duración prevista: unos 2 días.",
       "desde": "28/09/2026",
       "ultima_novedad": "06/10/2026",
-      "novedad": "La empresa ya ha tomado las medidas y está encargando el material."
+      "novedad": "Ya hay fecha para la obra: martes 13 de octubre desde las 15:30."
     },
     {
       "tema": "Bomba de achique del foso del ascensor",
