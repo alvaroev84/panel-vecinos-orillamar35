@@ -11,10 +11,20 @@
       "estado": "en-marcha",
       "estado_texto": "Adjudicada",
       "detalle": "Se van a sustituir las dos claraboyas del edificio.",
-      "siguiente": "Se acordará la fecha con la empresa y se avisará a todos con antelación.",
+      "siguiente": "En cuanto llegue el material se fijará el día de la obra (unos 2 días) y se avisará a todos con antelación.",
       "desde": "28/09/2026",
-      "ultima_novedad": "01/10/2026",
-      "novedad": "Ya se ha elegido la empresa. La obra durará unos 2 días."
+      "ultima_novedad": "06/10/2026",
+      "novedad": "La empresa ha venido a tomar medidas para encargar el material."
+    },
+    {
+      "tema": "Bomba de achique del foso del ascensor",
+      "estado": "presupuesto",
+      "estado_texto": "Pidiendo presupuesto",
+      "detalle": "Se ha revisado el foso del ascensor y está seco. Hace falta instalar una bomba de achique nueva.",
+      "siguiente": "Con esa revisión se actualizará el presupuesto y se decidirá la instalación.",
+      "desde": "28/09/2026",
+      "ultima_novedad": "06/10/2026",
+      "novedad": "Está prevista una nueva revisión del foso del ascensor la semana del 12 de octubre para elegir la bomba adecuada."
     },
     {
       "tema": "Sala de máquinas del ascensor",
@@ -25,16 +35,6 @@
       "desde": "28/09/2026",
       "ultima_novedad": "28/09/2026",
       "novedad": ""
-    },
-    {
-      "tema": "Bomba de achique del foso del ascensor",
-      "estado": "presupuesto",
-      "estado_texto": "Pidiendo presupuesto",
-      "detalle": "Se ha revisado el foso del ascensor y está seco. Hace falta instalar una bomba de achique nueva.",
-      "siguiente": "En cuanto llegue el presupuesto se decidirá la instalación.",
-      "desde": "28/09/2026",
-      "ultima_novedad": "01/10/2026",
-      "novedad": "Revisado el foso del ascensor: está seco y el ascensor funciona con normalidad. Se ha pedido presupuesto para la bomba nueva."
     },
     {
       "tema": "Cubierta: goteras en la zona de trasteros",
