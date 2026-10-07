@@ -125,17 +125,20 @@
 
     function num(f) { if (!f) return 0; var p = f.split('/'); return p.length === 3 ? +(p[2] + p[1] + p[0]) : 0; }
     function prog(t) { return t.estado === 'programado' ? 1 : 0; }
+    // Una novedad solo se destaca durante 3 días (72 h) desde su fecha; después el tema vuelve al bloque normal.
+    function vig(t) { if (!t.novedad || !t.ultima_novedad) return false; var p = t.ultima_novedad.split('/'); if (p.length !== 3) return false;
+      var ini = new Date(+p[2], +p[1] - 1, +p[0]); return (new Date() - ini) < 4 * 86400000; }
     var temas = (d.temas || []).slice().sort(function (a, b) { return (prog(a) - prog(b)) || (num(b.ultima_novedad) - num(a.ultima_novedad)); });
-    var nuevos = temas.filter(function (t) { return t.novedad; });
-    var resto = temas.filter(function (t) { return !t.novedad; });
+    var nuevos = temas.filter(function (t) { return vig(t); });
+    var resto = temas.filter(function (t) { return !vig(t); });
     function tarjeta(t) {
-      var c = el('article', 'tema' + (t.novedad ? ' nuevo' : ''));
+      var c = el('article', 'tema' + (vig(t) ? ' nuevo' : ''));
       var h = el('h3');
-      if (t.novedad) h.appendChild(el('span', 'badge', 'NOVEDAD'));
+      if (vig(t)) h.appendChild(el('span', 'badge', 'NOVEDAD'));
       h.appendChild(document.createTextNode(t.tema));
       c.appendChild(h);
       c.appendChild(el('span', 'chip ' + t.estado, t.estado_texto));
-      if (t.novedad) c.appendChild(el('p', 'nov', t.novedad));
+      if (vig(t)) c.appendChild(el('p', 'nov', t.novedad));
       c.appendChild(el('p', null, t.detalle));
       var s = el('p', 'sig'); s.appendChild(el('b', null, 'Siguiente paso: ')); s.appendChild(document.createTextNode(t.siguiente)); c.appendChild(s);
       var pie = [];
