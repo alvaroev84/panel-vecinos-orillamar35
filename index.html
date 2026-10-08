@@ -30,6 +30,7 @@
     }
   }
   * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
   html { -webkit-text-size-adjust: 100%; }
   body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
   .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 40px; }
@@ -79,8 +80,17 @@
   @media (prefers-color-scheme: dark) { .contacto a span:last-child { color: var(--brand); } }
   footer { color: var(--muted); font-size: .85rem; margin-top: 28px; }
   ul.hecho .porque { color: var(--muted); font-size: .9rem; }
-  .zona { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-top: 18px; color: var(--ink); text-decoration: none; }
-  .zona b { color: var(--brand); }
+  .login { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-top: 18px; }
+  .login label { display: block; font-weight: 650; margin: 14px 0 6px; }
+  .login select, .login input { width: 100%; font: inherit; font-size: 1.15rem; padding: 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--ink); }
+  .login button, button.salir { margin-top: 16px; width: 100%; font: inherit; font-weight: 700; padding: 14px; border: 0; border-radius: 10px; background: var(--brand); color: var(--brand-ink); cursor: pointer; }
+  button.salir { background: transparent; color: var(--muted); border: 1px solid var(--line); font-weight: 600; margin-top: 24px; }
+  .msg { font-weight: 650; min-height: 1.4em; margin: 10px 0 0; }
+  details.cuentas { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 4px 16px; margin-top: 10px; }
+  details.cuentas summary { cursor: pointer; font-weight: 650; padding: 10px 0; }
+  details.cuentas table { margin: 6px 0 12px; }
+  details.cuentas p { margin: 6px 0; }
+  .muted { color: var(--muted); font-size: .9rem; }
   .error { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
 </style>
 </head>
@@ -88,13 +98,22 @@
 <header>
   <div class="wrap">
     <h1>Comunidad Orillamar 35</h1>
-    <p class="act">Actualizado el <span id="act">…</span></p>
-    <p class="sub">Qué estamos haciendo y en qué punto está cada tema</p>
+    <p class="act" id="actp" hidden>Actualizado el <span id="act">…</span></p>
+    <p class="sub">Qué estamos haciendo y en qué punto está cada tema · solo para los vecinos del edificio</p>
   </div>
 </header>
 
 <main class="wrap" id="app">
-  <p class="error" id="cargando">Cargando…</p>
+  <div class="login" id="login">
+    <p><b>Escanea el código QR de la pegatina de tu piso</b> y el panel se abre solo. Si no tienes la pegatina a mano, elige tu piso y escribe la clave que viene en ella.</p>
+    <label for="piso">Tu piso</label>
+    <select id="piso"></select>
+    <label for="clave">Clave</label>
+    <input id="clave" autocomplete="off" autocapitalize="none" spellcheck="false" inputmode="text">
+    <button id="entrar" type="button">Entrar</button>
+    <p class="msg" id="msg" role="alert"></p>
+    <p class="muted">¿No tienes pegatina? Pídesela al presidente, Álvaro (1º Centro).</p>
+  </div>
 </main>
 
 <script>
@@ -104,16 +123,46 @@
   function h2(t) { return el('h2', null, t); }
   function tel(n) { return 'tel:' + String(n).replace(/\s/g, ''); }
 
-  fetch('datos.json', { cache: 'no-store' })
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(pinta)
-    .catch(function () {
-      document.getElementById('cargando').textContent = 'No se ha podido cargar la información. Vuelve a intentarlo en un rato.';
-    });
+  var D = {"iter": 600000, "iv": "bjwhc4o/4QKBzNa3", "ct": "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", "pisos": {"B1": {"nombre": "Bajo 1", "sal": "4pbSvhCkO3A8fXp+DKcqZg==", "iv": "hxOxzXkEeBNfBgPT", "k": "xiAipROQV7hBnpivfNhR5WOdRlmYfMlvTUXEVnXFMLK3Ay11eQiWsvo4W3GbhuUO"}, "B2": {"nombre": "Bajo 2", "sal": "CD9X/0XYXdqhDH33S5U3+g==", "iv": "NG1wFQo5/UDd1Rw3", "k": "/ZILIkCrF7bdgPOHX6H3k6EhBbfjeZ9pjAt4Jg/lIlnpHJGpd8u6WBsI6AgZFfgk"}, "1D": {"nombre": "1\u00ba Dcha", "sal": "LnE3a+Dq0ekM5sixR2iDQQ==", "iv": "RaP7Nm8+lQtCz84R", "k": "DP2UZBBuDqE3nGnRatPxa9F7Fv0OYpdVxo576a0F/VUNA1PbZqE7KyikZKlKKJB4"}, "1I": {"nombre": "1\u00ba Izda", "sal": "SYrk3MKznNomIx/9swrkVg==", "iv": "1tdW7vP/fgNXzs+J", "k": "eqEpt14tdMCtAGb5l2WKeNOcbyn/KUuEbe5kCc94Bv8vA+eFuxyQUOnB5gultNG9"}, "1C": {"nombre": "1\u00ba Centro", "sal": "2u39+ypiRdfQLX2U/xx4hg==", "iv": "wvQYx/vERzU62ZzC", "k": "6w0qZ/w81ibNTQQPd0QyuWiIxZGYmWxPrtPEFkBZuNLCmFM7PgVHS/3RDCTfSBib"}, "2D": {"nombre": "2\u00ba Dcha", "sal": "6091SYu0EiTJf+JzMHLElQ==", "iv": "sj3wiz5G/YAFtP0j", "k": "jHKflFgYs22EnYSOZvELN3L+ntp7Sdh7GN8C7+eV6cQnXRYNm0/RZ4QKMoDdjvIc"}, "2I": {"nombre": "2\u00ba Izda", "sal": "qtsLxVSLG4PmjYBQ4Ux9mQ==", "iv": "qvzXYMd8hWoIcDsA", "k": "jH+aHmc7CdPzRhSA8uvs1vWNSWDe5WOlLi71A1Jz6OsoSrt8o/DuZ5bz2lgEsBbY"}, "2C": {"nombre": "2\u00ba Centro", "sal": "1qaQnX2SRYj1SYOI7yxSEg==", "iv": "MvsPtI3pkOUA17Os", "k": "1ZUpbh9bvFMtX4Qd1Kbcm4/sc0j6cprD6M64WDaBncsPI//QlqN2XuxsdFbGY+Sx"}, "3D": {"nombre": "3\u00ba Dcha", "sal": "0XS8tuAFAHI2qcrXKBwL8Q==", "iv": "xzBbGIR09VsGrvoK", "k": "T7Mr8iYlYdZ8JgrHoNniPkQSrZ5HQgjz2JoDDvGOnXWhfa8SFEgQc9wKJUM0LSTA"}, "3I": {"nombre": "3\u00ba Izda", "sal": "TysrPFl9Fjw9KSwIBFO2sA==", "iv": "anWa6KrJP0q5czoO", "k": "xIe6YZW1dWhj3W6uN2q9qXPrZEgHj+uTPx9dQVuVA2gV20hCMsczK41alg5+wwcL"}, "3C": {"nombre": "3\u00ba Centro", "sal": "5iCEG7eauLzXFSm+AWHtvQ==", "iv": "nJQmrxZvi296v9xB", "k": "Pr/0W8T9nEYTpM5iI9OiL7wM1+ipROSASX9O+DdFbXd+SPbAmQ+ytNDXJM3RTMrr"}, "4D": {"nombre": "4\u00ba Dcha", "sal": "Pgiv2mgyiSlP4Q0Q41o2RQ==", "iv": "Mk55AInlvNCm+NGX", "k": "a0M1uu3f1VJn0owDXEq+lfAxlyza40wbmbx6E4QE5U86kMHnd85Zk9JOP01q8AsJ"}, "4I": {"nombre": "4\u00ba Izda", "sal": "kIS7P1zyK+dX4R3abdJfHg==", "iv": "u0UZGEbwhAsHKOkH", "k": "PmcRPafVPAXGUb38SK1YtZ6IaQHZOt+Gjgqhrr4bO2PwxZrql60dYxIM4XJVmACQ"}, "4C": {"nombre": "4\u00ba Centro", "sal": "pfz4iSnBq575u960icSnEg==", "iv": "kZuLr83pK21CX5/Z", "k": "6PXvWFbz4z6ws9Moq+Ew4mMk5ydH99aPO7dm5NrXOUN3ay0K4TaMbZIpY/3oOpcE"}, "5D": {"nombre": "5\u00ba Dcha", "sal": "ziJHPcNnKb9dhrQkPKbOKQ==", "iv": "OjitJocSUbCys9bQ", "k": "XsZfbrONWMO4vLGv3j1Oyj9eyDjR3PeX/d/xWqBwa2V1rC5vgX18EHIJEM7VP177"}, "5I": {"nombre": "5\u00ba Izda", "sal": "HQFgHkzvMpnyGLzjfZa/BA==", "iv": "4yC26kamKsEG27rZ", "k": "FUvfWFQQlzONDKt//TLqKcL52Vf2TxDF47lri802T72a8MW9xzTro3/Z0A7aCEK2"}, "5C": {"nombre": "5\u00ba Centro", "sal": "VaTNYrfmmvJ1G+xStoYTWw==", "iv": "msmQd0Vdcvh+av9m", "k": "ErPlXmr8ZgHU1GTiTWNsZ2SjRFcFcCEm5XScz8bya5fOBFnp938SzgZ/145yIQ1s"}}};
+  var GUARDA = 'orillamar35-panel';
+  var $ = function (id) { return document.getElementById(id); };
+  var b64 = function (t) { return Uint8Array.from(atob(t), function (c) { return c.charCodeAt(0); }); };
+  Object.keys(D.pisos).forEach(function (p) { var o = el('option', null, D.pisos[p].nombre); o.value = p; $('piso').appendChild(o); });
+
+  function abrir(piso, clave) {
+    var info = D.pisos[piso]; if (!info) return Promise.reject();
+    var enc = new TextEncoder(); clave = clave.trim().toLowerCase().replace(/\s+/g, '');
+    return crypto.subtle.importKey('raw', enc.encode(clave), 'PBKDF2', false, ['deriveKey'])
+      .then(function (k) { return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: b64(info.sal), iterations: D.iter, hash: 'SHA-256' }, k, { name: 'AES-GCM', length: 256 }, false, ['decrypt']); })
+      .then(function (k) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(info.iv), additionalData: enc.encode(piso) }, k, b64(info.k)); })
+      .then(function (m) { return crypto.subtle.importKey('raw', m, 'AES-GCM', false, ['decrypt']); })
+      .then(function (k) { return crypto.subtle.decrypt({ name: 'AES-GCM', iv: b64(D.iv) }, k, b64(D.ct)); })
+      .then(function (t) {
+        try { localStorage.setItem(GUARDA, JSON.stringify({ p: piso, c: clave })); } catch (e) {}
+        pinta(JSON.parse(new TextDecoder().decode(t)));
+      });
+  }
+  function intentar(piso, clave) {
+    $('msg').textContent = 'Abriendo…';
+    abrir(piso, clave).catch(function () { $('msg').textContent = 'La clave no es la de ese piso. Revisa la pegatina.'; });
+  }
+  $('entrar').addEventListener('click', function () { intentar($('piso').value, $('clave').value); });
+  $('clave').addEventListener('keydown', function (e) { if (e.key === 'Enter') intentar($('piso').value, $('clave').value); });
+  window.addEventListener('hashchange', function () { location.reload(); });
+  var h = new URLSearchParams(location.hash.slice(1));
+  if (h.get('p') && h.get('k')) {
+    $('piso').value = h.get('p');
+    history.replaceState(null, '', location.pathname);  // quita la clave de la barra de direcciones
+    intentar(h.get('p'), h.get('k'));
+  } else {
+    try { var g = JSON.parse(localStorage.getItem(GUARDA) || 'null'); if (g) { $('piso').value = g.p; abrir(g.p, g.c).catch(function () { try { localStorage.removeItem(GUARDA); } catch (e) {} }); } } catch (e) {}
+  }
 
   function pinta(d) {
     app.innerHTML = '';
-    document.getElementById('act').textContent = d.actualizado;
+    var sal = el('button', 'salir', 'Cerrar el panel en este móvil');
+    sal.type = 'button'; sal.addEventListener('click', function () { try { localStorage.removeItem(GUARDA); } catch (e) {} location.replace(location.pathname); });
+    document.getElementById('act').textContent = d.actualizado; document.getElementById('actp').hidden = false;
 
     function caducado(f) {
       if (!f) return false; var p = f.split('/'); if (p.length !== 3) return false;
@@ -204,11 +253,21 @@
     if (c.presidente_telefono) fila('Teléfono del presidente', c.presidente_telefono, tel(c.presidente_telefono));
     app.appendChild(box);
 
-    var zona = el('a', 'zona'); zona.href = 'propietarios.html';
-    zona.appendChild(el('b', null, '🔒 Zona de propietarios'));
-    zona.appendChild(el('div', null, 'Cuentas de la comunidad y explicación de las decisiones. Se abre con el QR o la clave de la pegatina de tu piso.'));
-    app.appendChild(zona);
-    app.appendChild(el('footer', null, 'Página informativa para los vecinos de Orillamar 35. No incluye datos personales ni el contenido de las actas, que se envían a cada propietario.'));
+    var q = d.cuentas;
+    if (q) {
+      app.appendChild(h2('Cuentas de la comunidad'));
+      var det = el('details', 'cuentas');
+      det.appendChild(el('summary', null, 'Saldo: ' + q.saldo + ' (' + q.fecha_saldo + ') · ver más'));
+      var t = el('table');
+      function fila2(a, v) { var tr = el('tr'); tr.appendChild(el('td', null, a)); tr.appendChild(el('td', 'fr', v)); t.appendChild(tr); }
+      (q.filas || []).forEach(function (f) { fila2(f[0], f[1]); });
+      det.appendChild(t);
+      (q.notas || []).forEach(function (n) { det.appendChild(el('p', null, n)); });
+      det.appendChild(el('p', 'muted', 'Datos de los extractos del banco, actualizados el ' + q.actualizado + '. El detalle, al presidente.'));
+      app.appendChild(det);
+    }
+    app.appendChild(sal);
+    app.appendChild(el('footer', null, 'Página informativa para los vecinos de Orillamar 35, solo con la clave de cada piso. No incluye datos personales ni el contenido de las actas, que se envían a cada propietario.'));
   }
 })();
 </script>
