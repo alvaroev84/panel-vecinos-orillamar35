@@ -78,6 +78,9 @@
   .contacto .num { white-space: nowrap; flex-shrink: 0; }
   @media (prefers-color-scheme: dark) { .contacto a span:last-child { color: var(--brand); } }
   footer { color: var(--muted); font-size: .85rem; margin-top: 28px; }
+  ul.hecho .porque { color: var(--muted); font-size: .9rem; }
+  .zona { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-top: 18px; color: var(--ink); text-decoration: none; }
+  .zona b { color: var(--brand); }
   .error { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
 </style>
 </head>
@@ -162,7 +165,9 @@
         var li = el('li');
         li.appendChild(el('span', 'ok', '✓'));
         li.appendChild(el('span', 'f', h.fecha));
-        li.appendChild(el('span', null, h.texto));
+        var tx = el('span', null, h.texto);
+        if (h.porque) { var pq = el('span', 'porque', 'Por qué: ' + h.porque); tx.appendChild(document.createElement('br')); tx.appendChild(pq); }
+        li.appendChild(tx);
         ul.appendChild(li);
       });
       app.appendChild(ul);
@@ -199,6 +204,10 @@
     if (c.presidente_telefono) fila('Teléfono del presidente', c.presidente_telefono, tel(c.presidente_telefono));
     app.appendChild(box);
 
+    var zona = el('a', 'zona'); zona.href = 'propietarios.html';
+    zona.appendChild(el('b', null, '🔒 Zona de propietarios'));
+    zona.appendChild(el('div', null, 'Cuentas de la comunidad y explicación de las decisiones. Se abre con el QR o la clave de la pegatina de tu piso.'));
+    app.appendChild(zona);
     app.appendChild(el('footer', null, 'Página informativa para los vecinos de Orillamar 35. No incluye datos personales ni el contenido de las actas, que se envían a cada propietario.'));
   }
 })();
